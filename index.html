@@ -5,30 +5,6 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, minimum-scale=1.0, initial-scale=1, user-scalable=yes">
 
-  <meta name="theme-color" content="#fff200">
-  <link rel="manifest" href="./manifest.json">
-  <link rel="shortcut icon" href="./images/favicon.ico">
-
-  <!-- Add to homescreen for Chrome on Android. Fallback for manifest.json -->
-  <meta name="mobile-web-app-capable" content="yes">
-  <meta name="application-name" content="font-style-matcher">
-
-  <!-- Add to homescreen for Safari on iOS -->
-  <meta name="apple-mobile-web-app-capable" content="yes">
-  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-  <meta name="apple-mobile-web-app-title" content="font-style-matcher">
-
-  <!-- Homescreen icons -->
-  <link rel="apple-touch-icon" href="./images/icon-48x48.png">
-  <link rel="apple-touch-icon" sizes="72x72" href="./images/icon-72x72.png">
-  <link rel="apple-touch-icon" sizes="96x96" href="./images/icon-96x96.png">
-  <link rel="apple-touch-icon" sizes="144x144" href="./images/icon-144x144.png">
-  <link rel="apple-touch-icon" sizes="192x192" href="./images/icon-192x192.png">
-
-  <!-- Tile icon for Windows 8 (144x144 + tile color) -->
-  <meta name="msapplication-TileColor" content="#fff200">
-  <meta name="msapplication-TileImage" content="./images/icon-144x144.png">
-
   <link rel="stylesheet" type="text/css" href="./style.css">
 
   <script>
@@ -42,27 +18,20 @@
     }
   </script>
 </head>
+
 <body>
+
   <div class="container">
     <h1>Font style matcher</h1>
-    <p>
-      If you're using a web font, you're bound to see a flash of unstyled text (or FOUC),
-      between the initial render of your websafe font and the webfont that you've chosen.
-      This usually results in a jarring shift in layout, due to
-      sizing discrepancies between the two fonts. To minimize this
-      discrepancy, you can try to match the fallback font and the intended webfont’s
-      x-heights and widths <a href="http://helenvholmes.com/writing/type-is-your-right">[1]</a>.
-      This tool helps you do <b><i>exactly</i></b> that.
-    </p>
-    <br>
     <div class="columns">
+
+      <!-- left column -->
       <div>
-        <div class="input-field" title="Type a different font family, like 'Arial', and tab away from the input to see a preview of it.">
+        <div class="input-field input-field--text" title="Type a different font family, like 'Arial', and tab away from the input to see a preview of it.">
           <input value="Georgia" placeholder="Fallback font name"
               id="fallbackName" data-target="fallback">
           <label>Fallback font</label>
         </div>
-        <br>
 
         <div class="input-field">
           <input type="range" value="16"
@@ -109,8 +78,9 @@
         <p id="fallback">The fox jumped over the lazy dog, the scoundrel.</p>
       </div>
 
+      <!-- right column -->
       <div>
-        <div class="input-field" title="Type a different font family, like 'Arial', and tab away from the input to see a preview of it.">
+        <div class="input-field input-field--text" title="Type a different font family, like 'Arial', and tab away from the input to see a preview of it.">
           <input value="Merriweather" placeholder="Web font name" class="with-checkbox"
               id="webfontName" list="families"
               data-target="webfont">
@@ -119,7 +89,6 @@
           <input id="downloadFont" type="checkbox" checked>
           <span class="text">Download from Google Fonts</span>
         </div>
-        <br>
 
         <div class="input-field">
           <input type="range" value="16"
@@ -166,7 +135,7 @@
         <p id="webfont">The fox jumped over the lazy dog, the scoundrel.</p>
       </div>
     </div>
-
+    <!-- overlap section -->
     <h2>Overlapped</h2>
     <p>In the default example, Merriweather is taller and wider than Georgia, so if you
       bump Georgia's <b>font size</b> up to 18px, and its <b>letter spacing</b> to 0.1px
