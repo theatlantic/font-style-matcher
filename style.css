@@ -10,27 +10,6 @@ body {
   padding: 20px;
 }
 
-p {
-  color: #434242;
-  font-family: Georgia, "Times New Roman", Times, serif;
-  font-size: 0.9em;
-  font-weight: 400;
-  line-height: 1.8em;
-}
-
-a:link, a:visited, button.clipboardButton {
-  color: #3F51B5;
-  text-decoration: none;
-  padding-bottom: 5px;
-  padding-top: 5px;
-}
-
-a:hover, button.clipboardButton:hover {
-  background-color: #fde100;
-  border-radius: 3px;
-  text-decoration: none;
-}
-
 h1 {
   color: black;
   background-color: #fff200;
@@ -55,78 +34,51 @@ h2 {
   font-size: 30px;
 }
 
-.columns {
+p {
+  color: #434242;
+  font-family: Georgia, "Times New Roman", Times, serif;
+  font-size: 0.9em;
+  font-weight: 400;
+  line-height: 1.8em;
+}
+
+a:link, a:visited, button.clipboardButton {
+  color: #3F51B5;
+  text-decoration: none;
+  padding-bottom: 5px;
+  padding-top: 5px;
+}
+
+a:hover, button.clipboardButton:hover {
+  background-color: #fde100;
+  border-radius: 3px;
+  text-decoration: none;
+}
+
+.c-sliders {
 	display: -ms-flex;
 	display: -webkit-flex;
 	display: flex;
   margin: 24px 0;
 }
 
-.columns > div {
+.c-sliders__column {
 	width: 50%;
 }
 
-.columns > div:first-child {
+.c-sliders__column:first-child {
 	margin-right: 20px;
 }
 
-@media (max-width: 500px) {
-  .container {
-    max-width: 700px;
-    margin: 20px auto 0 auto;
-    padding: 10px 20px;
-  }
-
-  h1 {
-    font-size: 8.8vw;
-    line-height: 3.5vw;
-    margin-bottom: 20px;
-  }
-
-  .columns {
-    display: block;
-    margin: 0;
-  }
-
-  .columns > div {
-  	width: 100%;
-  }
-
-  .columns > div:first-child {
-  	margin-right: 0px;
-    margin-bottom: 40px;
-  }
-
-  .columns > div:last-child {
-    margin-bottom: 40px;
-  }
-
-  #webfont, #fallback {
-    margin: 0;
-  }
-}
-
-.sample {
-  font-weight: normal;
-}
-
-.input-field {
+.c-sliders__container {
   position: relative;
 }
 
-.input-field--text {
-  padding-bottom: 8px;
+.c-sliders__container--with-checkbox {
+  margin-bottom: 4px;
 }
 
-.input-field label {
-  position: absolute;
-  top: 0;
-  left: 2px;
-  font-size: 14px;
-  color: #424242;
-}
-
-.input-field input {
+.c-sliders__input {
   background-color: transparent;
   border: none;
   border-bottom: 1px solid #9e9e9e;
@@ -143,28 +95,16 @@ h2 {
   max-width: 400px;
 }
 
-.input-field input.with-checkbox {
+.c-sliders__label {
+  position: absolute;
+  top: 0;
+  left: 2px;
+  font-size: 14px;
+  color: #424242;
+}
+
+.c-sliders__input--text {
   margin-bottom: 0px;
-}
-
-.input-field input[type="checkbox"] {
-  width: auto;
-  margin: 0;
-  padding: 0;
-  margin-bottom: 8px;
-  min-width: 0;
-}
-
-.input-field input[type="range"] {
-  -webkit-appearance: none;
-  background: #3F51B5;
-  padding: 0;
-  margin-bottom: 8px;
-  height: 2px;
-  outline: none;
-  margin: 24px 0 30px 0;
-  border: none;
-  outline: none;
 }
 
 ::-moz-range-track {
@@ -225,4 +165,41 @@ hr {
 .clipboardButton svg {
   vertical-align: middle;
   fill: #3F51B5;
+}
+
+
+@media (max-width: 500px) {
+  .container {
+    max-width: 700px;
+    margin: 20px auto 0 auto;
+    padding: 10px 20px;
+  }
+
+  h1 {
+    font-size: 8.8vw;
+    line-height: 3.5vw;
+    margin-bottom: 20px;
+  }
+
+  .columns {
+    display: block;
+    margin: 0;
+  }
+
+  .columns > div {
+  	width: 100%;
+  }
+
+  .columns > div:first-child {
+  	margin-right: 0px;
+    margin-bottom: 40px;
+  }
+
+  .columns > div:last-child {
+    margin-bottom: 40px;
+  }
+
+  #webfont, #fallback {
+    margin: 0;
+  }
 }
