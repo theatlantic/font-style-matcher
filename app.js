@@ -4,17 +4,15 @@
   var clipboard = new Clipboard('.clipboardButton');
   updateClipboardButtons();
 
-  getAllGoogleFonts();
-
   simulateFout.addEventListener('change', fout);
-  downloadFont.addEventListener('change', download);
   useColours.addEventListener('change', colour);
-  download();
 
   fallback.style.fontFamily = fallbackOutput.style.fontFamily = fallbackName.value;
   webfont.style.fontFamily = webfontOutput.style.fontFamily = webfontName.value;
+
   fallback.style.fontSize = fallbackOutput.style.fontSize = '16px';
   webfont.style.fontSize = webfontOutput.style.fontSize = '16px';
+
   fallback.style.lineHeight = fallbackOutput.style.lineHeight = '28px';
   webfont.style.lineHeight = webfontOutput.style.lineHeight = '28px';
 
@@ -103,10 +101,6 @@
     var which = event.target.dataset.target;
     updateStyle('font-family', which, value);
     updateStyle('font-family', which + 'Output', value);
-
-    if (which === 'webfont') {
-      download();
-    }
   }
 
   function updateFontWeight(event) {
@@ -160,41 +154,8 @@
     }, 100)
   }
 
-  function download() {
-    var shouldDownload = downloadFont.checked;
-
-    if (!shouldDownload)
-      return;
-
-    var url = 'https://fonts.googleapis.com/css?family=' + webfontName.value.trim() +
-        ':300,300i,400,400i,700,700i,900,900i';
-
-    var link = document.createElement('link');
-    link.rel = 'stylesheet';
-    link.href = url;
-    document.head.appendChild(link);
-  }
-
   function colour() {
     var shouldColour = useColours.checked;
     fallbackOutput.style.color = shouldColour ? 'red' : 'black';
-  }
-
-  function getAllGoogleFonts() {
-    var request = new XMLHttpRequest();
-    var url = 'https://www.googleapis.com/webfonts/v1/webfonts?key=AIzaSyAkX01E9DhABr4cn4tKD26JuHQstaT5-Ss';
-    request.open('GET', url, true);
-    request.onreadystatechange = function() {
-      if (request.readyState == 4 && request.status == 200) {
-        var data = JSON.parse(request.responseText);
-        var names = data.items;
-        var options = '';
-        for (var i = 0; i < names.length; i++) {
-          options += '<option value="'+ names[i].family +'"/>'; ;
-        }
-        document.getElementById('families').innerHTML = options;
-      }
-    };
-    request.send();
   }
 })();

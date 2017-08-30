@@ -7,40 +7,91 @@
 </head>
 
 <body>
-
   <div class="container">
     <h1 class="hed">Font style matcher</h1>
-
     <div class="c-sliders">
       <div class="c-sliders__column">
         <div class="c-sliders__container" title="Type a different font family, like 'Arial', and tab away from the input to see a preview of it.">
-          <input class="c-sliders__input" id="fallbackName" value="Georgia" placeholder="Fallback font name" data-target="fallback">
           <label class="c-sliders__label">Fallback font</label>
+          <select class="c-font-selector" id="fallbackName" data-target="fallback">
+            <optgroup label="Sans-Serif">
+              <option value="Arial">Arial</option>
+              <option value="Arial Black">Arial Black</option>
+              <option value="Arial Narrow">Arial Narrow</option>
+              <option value="Arial Rounded MT Bold">Arial Rounded MT Bold</option>
+              <option value="Avant Garde">Avant Garde</option>
+              <option value="Calibri">Calibri</option>
+              <option value="Candara">Candara</option>
+              <option value="Century Gothic">Century Gothic</option>
+              <option value="Franklin Gothic Medium">Franklin Gothic Medium</option>
+              <option value="Futura">Futura</option>
+              <option value="Geneva">Geneva</option>
+              <option value="Gill Sans">Gill Sans</option>
+              <option value="Helvetica">Helvetica</option>
+              <option value="Impact">Impact</option>
+              <option value="Lucida Grande">Lucida Grande</option>
+              <option value="Optima">Optima</option>
+              <option value="Segoe UI">Segoe UI</option>
+              <option value="Tahoma">Tahoma</option>
+              <option value="Trebuchet MS">Trebuchet MS</option>
+              <option value="Verdana">Verdana</option>
+            </optgroup>
+            <optgroup label="Serif">
+              <option value="Big Caslon">Big Caslon</option>
+              <option value="Bodoni MT">Bodoni MT</option>
+              <option value="Book Antiqua">Book Antiqua</option>
+              <option value="Calisto MT">Calisto MT</option>
+              <option value="Cambria">Cambria</option>
+              <option value="Didot">Didot</option>
+              <option value="Garamond">Garamond</option>
+              <option value="Georgia">Georgia</option>
+              <option value="Goudy Old Style">Goudy Old Style</option>
+              <option value="Hoefler Text">Hoefler Text</option>
+              <option value="Lucida Bright">Lucida Bright</option>
+              <option value="Palatino">Palatino</option>
+              <option value="Perpetua">Perpetua</option>
+              <option value="Rockwell">Rockwell</option>
+              <option value="Rockwell Extra Bold">Rockwell Extra Bold</option>
+              <option value="Baskerville">Baskerville</option>
+              <option value="Times New Roman">Times New Roman</option>
+            </optgroup>
+            <optgroup label="Monospaced">
+              <option value="Consolas">Consolas</option>
+              <option value="Courier New">Courier New</option>
+              <option value="Lucida Console">Lucida Console</option>
+              <option value="Lucida Sans Typewriter">Lucida Sans Typewriter</option>
+              <option value="Monaco">Monaco</option>
+              <option value="Andale Mono">Andale Mono</option>
+              <option value="Copperplate">Copperplate</option>
+              <option value="Papyrus">Papyrus</option>
+              <option value="Brush Script MT">Brush Script MT</option>
+            </optgroup>
+          </select>
         </div>
 
         <div class="c-sliders__container">
-          <input class="c-sliders__input" id="fallbackSize" type="range" value="16" min="5" max="50" step="1" data-target="fallback">
           <label class="c-sliders__label">Font size: <span id="fallbackSizeDisplay">16px</span></label>
+          <input class="c-sliders__input" id="fallbackSize" type="range" value="16" min="5" max="50" step="1" data-target="fallback">
         </div>
 
         <div class="c-sliders__container">
-          <input class="c-sliders__input" id="fallbackLineHeight" type="range" value="1" min="0" max="5" step="0.05" data-target="fallback">
           <label class="c-sliders__label">Line height: <span id="fallbackLineHeightDisplay">1</span></label>
+          <input class="c-sliders__input" id="fallbackLineHeight" type="range" value="1" min="0" max="5" step="0.05" data-target="fallback">
         </div>
 
         <div class="c-sliders__container">
-          <input class="c-sliders__input" id="fallbackWeight" type="range" value="300" min="100" max="900" step="100" data-target="fallback">
           <label class="c-sliders__label">Font weight: <span id="fallbackWeightDisplay">300</span></label>
+          <input class="c-sliders__input" id="fallbackWeight" type="range" value="300" min="100" max="900" step="100" data-target="fallback">
         </div>
 
         <div class="c-sliders__container">
-          <input class="c-sliders__input" id="fallbackSpacing" type="range" value="0" min="-2" max="2" step="0.05" data-target="fallback">
           <label class="c-sliders__label">Letter spacing: <span id="fallbackSpacingDisplay">0px</span></label>
+          <input class="c-sliders__input" id="fallbackSpacing" type="range" value="0" min="-2" max="2" step="0.05" data-target="fallback">
         </div>
 
         <div class="c-sliders__container">
-          <input class="c-sliders__input" id="fallbackWordSpacing" type="range" value="0" min="-2" max="2" step="0.05" data-target="fallback">
           <label class="c-sliders__label">Word spacing: <span id="fallbackWordSpacingDisplay">0px</span></label>
+          <input class="c-sliders__input" id="fallbackWordSpacing" type="range" value="0" min="-2" max="2" step="0.05" data-target="fallback">
         </div>
 
         <button id="fallbackClipboardButton" class='clipboardButton' data-clipboard-text="">
@@ -50,38 +101,39 @@
         <p id="fallback">The fox jumped over the lazy dog, the scoundrel.</p>
       </div>
 
-      <div class=c-sliders__column>
-        <div class="c-sliders__container c-sliders__container--with-checkbox" title="Type a different font family, like 'Arial', and tab away from the input class="c-sliders__input" to see a preview of it.">
-          <input class="c-sliders__input c-sliders__input--text" id="webfontName" value="Merriweather" placeholder="Web font name" list="families" data-target="webfont">
-          <datalist id="families"></datalist>
-          <label for="webfontName">Web font</label>
-          <input class="c-sliders__checkbox" id="downloadFont" type="checkbox" checked>
-          <span class="text">Download from Google Fonts</span>
+      <div class="c-sliders__column">
+        <div class="c-sliders__container c-sliders__container--with-checkbox">
+          <label class="c-sliders__label">Atlantic font</label>
+          <select class="c-font-selector" id="webfontName" data-target="webfont">
+            <option value="Druk">Druk</option>
+            <option value="Graphik">Graphik</option>
+            <option value="Noe">Noe</option>
+          </select>
         </div>
 
         <div class="c-sliders__container">
-          <input class="c-sliders__input" id="webfontSize" type="range" value="16" min="5" max="50" step="1" data-target="webfont">
           <label class="c-sliders__label">Font size: <span id="webfontSizeDisplay">16px</span></label>
+          <input class="c-sliders__input" id="webfontSize" type="range" value="16" min="5" max="50" step="1" data-target="webfont">
         </div>
 
         <div class="c-sliders__container">
-          <input class="c-sliders__input" id="webfontLineHeight" type="range" value="1" min="0" max="5" step="0.05" data-target="webfont">
           <label class="c-sliders__label">Line height: <span id="webfontLineHeightDisplay">1</span></label>
+          <input class="c-sliders__input" id="webfontLineHeight" type="range" value="1" min="0" max="5" step="0.05" data-target="webfont">
         </div>
 
         <div class="c-sliders__container">
-          <input class="c-sliders__input" id="webfontWeight" type="range" value="300" min="100" max="900" step="100" data-target="webfont">
           <label class="c-sliders__label">Font weight: <span id="webfontWeightDisplay">300</span></label>
+          <input class="c-sliders__input" id="webfontWeight" type="range" value="300" min="100" max="900" step="100" data-target="webfont">
         </div>
 
         <div class="c-sliders__container">
-          <input class="c-sliders__input" id="webfontSpacing" type="range" value="0" min="-2" max="2" step="0.05" data-target="webfont">
           <label class="c-sliders__label">Letter spacing: <span id="webfontSpacingDisplay">0px</span></label>
+          <input class="c-sliders__input" id="webfontSpacing" type="range" value="0" min="-2" max="2" step="0.05" data-target="webfont">
         </div>
 
         <div class="c-sliders__container">
-          <input class="c-sliders__input" id="webfontWordSpacing" type="range" value="0" min="-2" max="2" step="0.05" data-target="webfont">
           <label class="c-sliders__label">Word spacing: <span id="webfontWordSpacingDisplay">0px</span></label>
+          <input class="c-sliders__input" id="webfontWordSpacing" type="range" value="0" min="-2" max="2" step="0.05" data-target="webfont">
         </div>
 
         <button id="webfontClipboardButton" class='clipboardButton' data-clipboard-text="">
