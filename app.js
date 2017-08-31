@@ -1,8 +1,7 @@
 (function() {
   'use strict';
 
-  var clipboard = new Clipboard('.clipboardButton');
-  updateClipboardButtons();
+  var clipboard = new Clipboard('.c-sliders__clipboard');
 
   simulateFout.addEventListener('change', fout);
   useColours.addEventListener('change', colour);
@@ -15,6 +14,8 @@
 
   fallback.style.lineHeight = fallbackOutput.style.lineHeight = '28px';
   webfont.style.lineHeight = webfontOutput.style.lineHeight = '28px';
+
+  updateClipboardButtons();
 
   fallbackName.addEventListener('input', updateFontFamily);
   webfontName.addEventListener('input', updateFontFamily);
@@ -39,6 +40,7 @@
 
 
   clipboard.on('success', function(e) {
+    console.log('working');
     var span = e.trigger.querySelector('span')
     span.textContent = 'Copied!';
     setTimeout(function() {
@@ -47,6 +49,8 @@
   });
 
   clipboard.on('error', function(e) {
+    console.log('no working');
+
     var span = e.trigger.querySelector('span')
     span.textContent = 'Error copying :(';
     setTimeout(function() {
@@ -117,8 +121,10 @@
   }
 
   function updateClipboardButtons() {
+    console.log('clipboards!');
     var fallbackCss = fallbackOutput.style.cssText.split('; ').join('\n');
     var webfontCss = webfontOutput.style.cssText.split('; ').join('\n');
+    console.log(fallbackCss);
     document
         .getElementById('fallbackClipboardButton')
         .setAttribute('data-clipboard-text', fallbackCss);

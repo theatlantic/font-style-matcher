@@ -43,14 +43,14 @@ body {
   margin: 0;
 }
 
-.c-sliders-clipboard {
+.c-sliders__clipboard {
   color: #3F51B5;
   text-decoration: none;
   padding-bottom: 5px;
   padding-top: 5px;
 }
 
-.c-sliders-clipboard:hover {
+.c-sliders__clipboard:hover {
   background-color: #fde100;
   border-radius: 3px;
   text-decoration: none;
@@ -133,7 +133,7 @@ body {
   margin-bottom: 4px;
 }
 
-.c-sliders-clipboard {
+.c-sliders__clipboard {
   background: transparent;
   border: none;
   cursor: pointer;
