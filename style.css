@@ -1,7 +1,6 @@
 @font-face {
   font-family: 'Druk';
   font-style: normal;
-  font-weight: 900;
   src: url(fonts/Druk-Heavy-Web.woff2) format('woff2'),
        url(fonts/Druk-Heavy-Web.woff) format('woff');
 }
@@ -9,7 +8,6 @@
 @font-face {
   font-family: 'Graphik';
   font-style: normal;
-  font-weight: 600;
   src: url(fonts/Graphik-Bold-Web.woff2) format('woff2'),
        url(fonts/Graphik-Bold-Web.woff) format('woff');
 }
@@ -17,7 +15,6 @@
 @font-face {
   font-family: 'Noe';
   font-style: normal;
-  font-weight: 600;
   src: url(fonts/Noe-Display-Bold.woff2) format('woff2'),
        url(fonts/Noe-Display-Bold.woff) format('woff');
 }
@@ -25,7 +22,6 @@
 @font-face {
   font-family: 'Noe';
   font-style: italic;
-  font-weight: 600;
   src: url(fonts/Noe-Display-Bold-Italic.woff2) format('woff2'),
        url(fonts/Noe-Display-Bold-Italic.woff) format('woff');
 }
@@ -33,7 +29,6 @@
 @font-face {
   font-family: 'Lyon Text';
   font-style: normal;
-  font-weight: 600;
   src: url(fonts/Lyon-Text-Regular.woff2) format('woff2'),
        url(fonts/Lyon-Text-Regular.woff) format('woff');
 }
@@ -41,7 +36,6 @@
 @font-face {
   font-family: 'Lyon Text';
   font-style: italic;
-  font-weight: 600;
   src: url(fonts/Lyon-Text-Regular-Italic.woff2) format('woff2'),
        url(fonts/Lyon-Text-Regular-Italic.woff) format('woff');
 }
@@ -49,7 +43,6 @@
 @font-face {
   font-family: 'Lyon Display';
   font-style: normal;
-  font-weight: 600;
   src: url(fonts/Lyon-Display-Bold.woff2) format('woff2'),
        url(fonts/Lyon-Display-Bold.woff2) format('woff');
 }
@@ -57,7 +50,6 @@
 @font-face {
   font-family: 'Lyon Display';
   font-style: italic;
-  font-weight: 600;
   src: url(fonts/Lyon-Display-Bold-Italic.woff2) format('woff2'),
        url(fonts/Lyon-Display-Bold-Italic.woff2) format('woff');
 }

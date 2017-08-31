@@ -38,12 +38,10 @@
   fallbackFontStyle.addEventListener('input', updateFontStyle);
   webfontFontStyle.addEventListener('input', updateFontStyle);
 
-
   webfontOutput.addEventListener('blur', changeText);
   webfontOutput.addEventListener('focus', clearText);
 
   clipboard.on('success', function(e) {
-    console.log('working');
     var span = e.trigger.querySelector('span')
     span.textContent = 'Copied!';
     setTimeout(function() {
@@ -52,8 +50,6 @@
   });
 
   clipboard.on('error', function(e) {
-    console.log('no working');
-
     var span = e.trigger.querySelector('span')
     span.textContent = 'Error copying :(';
     setTimeout(function() {
@@ -115,11 +111,9 @@
     var which = event.target.dataset.target;
     updateStyle('font-weight', which, value);
     updateStyle('font-weight', which + 'Output', value);
-    document.getElementById(which + 'WeightDisplay').textContent = value;
   }
 
   function updateFontStyle(event) {
-    console.log('working');
     var value = event.target.value;
     var which = event.target.dataset.target;
     updateStyle('font-style', which, value);
@@ -132,10 +126,8 @@
   }
 
   function updateClipboardButtons() {
-    console.log('clipboards!');
     var fallbackCss = fallbackOutput.style.cssText.split('; ').join('\n');
     var webfontCss = webfontOutput.style.cssText.split('; ').join('\n');
-    console.log(fallbackCss);
     document
         .getElementById('fallbackClipboardButton')
         .setAttribute('data-clipboard-text', fallbackCss);
