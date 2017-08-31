@@ -7,11 +7,11 @@
 </head>
 
 <body>
-  <div class="container">
-    <h1 class="hed">Font style matcher</h1>
+  <div class="c-container">
+    <h1 class="c-hed">Font style matcher</h1>
     <div class="c-sliders">
       <div class="c-sliders__column">
-        <div class="c-sliders__container" title="Type a different font family, like 'Arial', and tab away from the input to see a preview of it.">
+        <div class="c-sliders__container">
           <label class="c-sliders__label">Fallback font</label>
           <select class="c-font-selector" id="fallbackName" data-target="fallback">
             <optgroup label="Sans-Serif">
@@ -94,20 +94,21 @@
           <input class="c-sliders__input" id="fallbackWordSpacing" type="range" value="0" min="-2" max="2" step="0.05" data-target="fallback">
         </div>
 
-        <button id="fallbackClipboardButton" class='clipboardButton' data-clipboard-text="">
-          <svg height="24" width="24" viewBox="0 0 24 24"><path d="M16 1H4c-1.1 0-2 .9-2 2v14h2V3h12V1zm3 4H8c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h11c1.1 0 2-.9 2-2V7c0-1.1-.9-2-2-2zm0 16H8V7h11v14z"></path></g></svg>
+        <button id="fallbackClipboardButton" class='c-sliders-clipboard' data-clipboard-text="">
+          <svg class="c-sliders__svg" height="24" width="24" viewBox="0 0 24 24"><path d="M16 1H4c-1.1 0-2 .9-2 2v14h2V3h12V1zm3 4H8c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h11c1.1 0 2-.9 2-2V7c0-1.1-.9-2-2-2zm0 16H8V7h11v14z"></path></g></svg>
           <span>Copy CSS to clipboard</span>
         </button>
         <p id="fallback">The fox jumped over the lazy dog, the scoundrel.</p>
       </div>
 
       <div class="c-sliders__column">
-        <div class="c-sliders__container c-sliders__container--with-checkbox">
+        <div class="c-sliders__container">
           <label class="c-sliders__label">Atlantic font</label>
           <select class="c-font-selector" id="webfontName" data-target="webfont">
             <option value="Druk">Druk</option>
             <option value="Graphik">Graphik</option>
             <option value="Noe">Noe</option>
+            <option value="Lyon Text">Lyon Text</option>
           </select>
         </div>
 
@@ -136,38 +137,32 @@
           <input class="c-sliders__input" id="webfontWordSpacing" type="range" value="0" min="-2" max="2" step="0.05" data-target="webfont">
         </div>
 
-        <button id="webfontClipboardButton" class='clipboardButton' data-clipboard-text="">
-          <svg height="24" width="24" viewBox="0 0 24 24"><path d="M16 1H4c-1.1 0-2 .9-2 2v14h2V3h12V1zm3 4H8c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h11c1.1 0 2-.9 2-2V7c0-1.1-.9-2-2-2zm0 16H8V7h11v14z"></path></g></svg>
+        <button id="webfontClipboardButton" class='c-sliders-clipboard' data-clipboard-text="">
+          <svg class="c-sliders__svg" height="24" width="24" viewBox="0 0 24 24"><path d="M16 1H4c-1.1 0-2 .9-2 2v14h2V3h12V1zm3 4H8c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h11c1.1 0 2-.9 2-2V7c0-1.1-.9-2-2-2zm0 16H8V7h11v14z"></path></g></svg>
           <span>Copy CSS to clipboard</span>
         </button>
         <p id="webfont">The fox jumped over the lazy dog, the scoundrel.</p>
       </div>
     </div>
 
-    <h2 class="hed hed--overlap">Overlapped</h2>
-    <p>In the default example, Merriweather is taller and wider than Georgia, so if you
-      bump Georgia's <b>font size</b> up to 18px, and its <b>letter spacing</b> to 0.1px
-      you'll get a pretty close match!</p>
+    <h2 class="c-hed c-hed--overlap">Font overlap</h2>
 
-    <p>
+    <div class="c-overlap__settings">
       <label><input type="checkbox" id="useColours">Use different colours for each font</label><br>
       <label><input type="checkbox" id="simulateFout">See layout shift due to FOUC</label>
-    </p>
+    </div>
 
-    <br>
-    <div class="output">
+    <div class="c-overlap__output">
       <div id="fallbackOutput">The fox jumped over the lazy dog, the scoundrel.
         <br><br>
         Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
       </div>
-      <div id="webfontOutput" contenteditable="true" class="overlap-font">The fox jumped over the lazy dog, the scoundrel.
+      <div id="webfontOutput" contenteditable="true" class="c-overlap__overlap-text">The fox jumped over the lazy dog, the scoundrel.
         <br><br>
         Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
       </div>
     </div>
 
-    <footer>
-    </footer>
   </div>
 </body>
 <script src="https://cdn.jsdelivr.net/clipboard.js/1.5.16/clipboard.min.js"></script>

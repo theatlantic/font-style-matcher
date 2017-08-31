@@ -30,9 +30,12 @@
        url(fonts/Noe-Display-Bold-Italic.woff) format('woff');
 }
 
-
-
-
+@font-face {
+  font-family: 'Lyon Text';
+  font-style: normal;
+  font-weight: 600;
+  src: url(fonts/Lyon-Text-Regular.otf) format('otf'),
+}
 
 body {
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
@@ -40,13 +43,28 @@ body {
   margin: 0;
 }
 
-.container {
+.c-sliders-clipboard {
+  color: #3F51B5;
+  text-decoration: none;
+  padding-bottom: 5px;
+  padding-top: 5px;
+}
+
+.c-sliders-clipboard:hover {
+  background-color: #fde100;
+  border-radius: 3px;
+  text-decoration: none;
+}
+
+.c-container {
   max-width: 700px;
   margin: 40px auto 0 auto;
   padding: 20px;
+  border-bottom: 2px solid #fde100;
+  margin-bottom: 40px;
 }
 
-h1 {
+.c-hed {
   color: black;
   background-color: #fff200;
   display: inline-block;
@@ -55,40 +73,21 @@ h1 {
   line-height: 20px;
   padding: 20px 20px 0 20px;
   margin-bottom: 40px;
-  font-size: 50px;
+  font-size: 42px;
 }
 
-h2 {
+.c-font-selector {
+  width: 100%;
+  font-size: 16px;
+  margin-bottom: 8px;
+}
+
+.c-hed--overlap {
   color: black;
-  background-color: #fff200;
-  display: inline-block;
-  letter-spacing: -1px;
-  margin: 0;
   line-height: 10px;
   padding: 10px 10px 0 10px;
   margin-bottom: 20px;
   font-size: 30px;
-}
-
-p {
-  color: #434242;
-  font-family: Georgia, "Times New Roman", Times, serif;
-  font-size: 0.9em;
-  font-weight: 400;
-  line-height: 1.8em;
-}
-
-a:link, a:visited, button.clipboardButton {
-  color: #3F51B5;
-  text-decoration: none;
-  padding-bottom: 5px;
-  padding-top: 5px;
-}
-
-a:hover, button.clipboardButton:hover {
-  background-color: #fde100;
-  border-radius: 3px;
-  text-decoration: none;
 }
 
 .c-sliders {
@@ -108,10 +107,6 @@ a:hover, button.clipboardButton:hover {
 
 .c-sliders__container {
   position: relative;
-}
-
-.c-sliders__container--with-checkbox {
-  margin-bottom: 4px;
 }
 
 .c-sliders__input {
@@ -138,57 +133,7 @@ a:hover, button.clipboardButton:hover {
   margin-bottom: 4px;
 }
 
-.c-sliders__input--text {
-  margin-bottom: 0px;
-}
-
-::-moz-range-track {
-  background: #3F51B5;
-  border: 0;
-  outline: none;
-}
-
-.input-field input:focus + label {
-  color: #3F51B5;
-}
-
-.input-field input[type=text]:focus {
-  border-bottom: 2px solid #3F51B5;
-  padding-bottom: 4px;
-}
-
-.input-field .text {
-  font-size: 14px;
-}
-
-.output {
-  position: relative;
-  min-height: 20px;
-}
-
-.overlap-font {
-  position: absolute;
-  top: 0;
-  left: 0;
-  bottom: 0;
-  right: 0;
-}
-
-footer {
-  margin-top: 50px;
-  padding-top: 8px;
-  border-top: 2px solid #fde100;
-  text-align: center;
-  text-transform: uppercase;
-  font-size: 10px;
-  letter-spacing: 1px;
-}
-
-hr {
-  background: red;
-}
-
-.clipboardButton {
+.c-sliders-clipboard {
   background: transparent;
   border: none;
   cursor: pointer;
@@ -197,41 +142,50 @@ hr {
   padding: 0;
 }
 
-.clipboardButton svg {
+.c-sliders__svg {
   vertical-align: middle;
   fill: #3F51B5;
 }
 
+::-moz-range-track {
+  background: #3F51B5;
+  border: 0;
+  outline: none;
+}
+
+.c-overlap__output {
+  position: relative;
+  min-height: 20px;
+}
+
+.c-overlap__overlap-text {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+}
 
 @media (max-width: 500px) {
-  .container {
+  .c-container {
     max-width: 700px;
     margin: 20px auto 0 auto;
     padding: 10px 20px;
   }
 
-  h1 {
+  .c-hed {
     font-size: 8.8vw;
     line-height: 3.5vw;
     margin-bottom: 20px;
   }
 
-  .columns {
+  .c-sliders__column {
     display: block;
     margin: 0;
   }
 
-  .columns > div {
+  .c-sliders__column {
   	width: 100%;
-  }
-
-  .columns > div:first-child {
-  	margin-right: 0px;
-    margin-bottom: 40px;
-  }
-
-  .columns > div:last-child {
-    margin-bottom: 40px;
   }
 
   #webfont, #fallback {
@@ -239,8 +193,6 @@ hr {
   }
 }
 
-.c-font-selector {
-  width: 100%;
-  font-size: 16px;
-  margin-bottom: 8px;
+.c-overlap__settings {
+  margin-bottom: 16px;
 }
