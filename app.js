@@ -35,9 +35,12 @@
   fallbackWeight.addEventListener('input', updateFontWeight);
   webfontWeight.addEventListener('input', updateFontWeight);
 
+  fallbackFontStyle.addEventListener('input', updateFontStyle);
+  webfontFontStyle.addEventListener('input', updateFontStyle);
+
+
   webfontOutput.addEventListener('blur', changeText);
   webfontOutput.addEventListener('focus', clearText);
-
 
   clipboard.on('success', function(e) {
     console.log('working');
@@ -113,6 +116,14 @@
     updateStyle('font-weight', which, value);
     updateStyle('font-weight', which + 'Output', value);
     document.getElementById(which + 'WeightDisplay').textContent = value;
+  }
+
+  function updateFontStyle(event) {
+    console.log('working');
+    var value = event.target.value;
+    var which = event.target.dataset.target;
+    updateStyle('font-style', which, value);
+    updateStyle('font-style', which + 'Output', value);
   }
 
   function updateStyle(name, element, value) {

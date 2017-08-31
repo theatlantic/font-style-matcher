@@ -34,7 +34,32 @@
   font-family: 'Lyon Text';
   font-style: normal;
   font-weight: 600;
-  src: url(fonts/Lyon-Text-Regular.otf) format('otf'),
+  src: url(fonts/Lyon-Text-Regular.woff2) format('woff2'),
+       url(fonts/Lyon-Text-Regular.woff) format('woff');
+}
+
+@font-face {
+  font-family: 'Lyon Text';
+  font-style: italic;
+  font-weight: 600;
+  src: url(fonts/Lyon-Text-Regular-Italic.woff2) format('woff2'),
+       url(fonts/Lyon-Text-Regular-Italic.woff) format('woff');
+}
+
+@font-face {
+  font-family: 'Lyon Display';
+  font-style: normal;
+  font-weight: 600;
+  src: url(fonts/Lyon-Display-Bold.woff2) format('woff2'),
+       url(fonts/Lyon-Display-Bold.woff2) format('woff');
+}
+
+@font-face {
+  font-family: 'Lyon Display';
+  font-style: italic;
+  font-weight: 600;
+  src: url(fonts/Lyon-Display-Bold-Italic.woff2) format('woff2'),
+       url(fonts/Lyon-Display-Bold-Italic.woff2) format('woff');
 }
 
 body {
@@ -76,10 +101,14 @@ body {
   font-size: 42px;
 }
 
-.c-font-selector {
+.c-selector {
   width: 100%;
+  font-size: 12px;
+  margin-bottom: 16px;
+}
+
+.c-selector--font {
   font-size: 16px;
-  margin-bottom: 8px;
 }
 
 .c-hed--overlap {
@@ -107,6 +136,10 @@ body {
 
 .c-sliders__container {
   position: relative;
+}
+
+.c-sliders__container--font-select {
+  margin-bottom: 16px;
 }
 
 .c-sliders__input {

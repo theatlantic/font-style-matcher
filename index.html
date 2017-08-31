@@ -11,9 +11,9 @@
     <h1 class="c-hed">Font style matcher</h1>
     <div class="c-sliders">
       <div class="c-sliders__column">
-        <div class="c-sliders__container">
+        <div class="c-sliders__container c-sliders__container--font-select">
           <label class="c-sliders__label">Fallback font</label>
-          <select class="c-font-selector" id="fallbackName" data-target="fallback">
+          <select class="c-selector c-selector--font" id="fallbackName" data-target="fallback">
             <optgroup label="Sans-Serif">
               <option value="Arial">Arial</option>
               <option value="Arial Black">Arial Black</option>
@@ -70,6 +70,15 @@
         </div>
 
         <div class="c-sliders__container">
+          <label class="c-sliders__label">Font style: <span id="fallbackFontStyleDisplay"></span></label>
+          <select class="c-selector" id="fallbackFontStyle" data-target="fallback">
+            <option value="normal">Normal</option>
+            <option value="italic">Italic</option>
+            <option value="oblique">Oblique</option>
+          </select>
+        </div>
+
+        <div class="c-sliders__container">
           <label class="c-sliders__label">Font size: <span id="fallbackSizeDisplay">16px</span></label>
           <input class="c-sliders__input" id="fallbackSize" type="range" value="16" min="5" max="50" step="1" data-target="fallback">
         </div>
@@ -102,13 +111,23 @@
       </div>
 
       <div class="c-sliders__column">
-        <div class="c-sliders__container">
+        <div class="c-sliders__container c-sliders__container--font-select">
           <label class="c-sliders__label">Atlantic font</label>
-          <select class="c-font-selector" id="webfontName" data-target="webfont">
+          <select class="c-selector c-selector--font" id="webfontName" data-target="webfont">
             <option value="Druk">Druk</option>
             <option value="Graphik">Graphik</option>
             <option value="Noe">Noe</option>
             <option value="Lyon Text">Lyon Text</option>
+            <option value="Lyon Display">Lyon Display</option>
+          </select>
+        </div>
+
+        <div class="c-sliders__container">
+          <label class="c-sliders__label">Font style: <span id="fallbackFontStyleDisplay"></span></label>
+          <select class="c-selector" id="webfontFontStyle" data-target="webfont">
+            <option value="normal">Normal</option>
+            <option value="italic">Italic</option>
+            <option value="oblique">Oblique</option>
           </select>
         </div>
 
